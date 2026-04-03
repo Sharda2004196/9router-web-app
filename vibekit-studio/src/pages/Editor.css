@@ -1,0 +1,237 @@
+/* Editor Styles */
+
+.editor {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+}
+
+.editor-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Top Bar */
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  gap: var(--space-4);
+}
+
+.topbar-left,
+.topbar-center,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.topbar-left {
+  flex: 1;
+}
+
+.topbar-center {
+  flex: 0 0 auto;
+}
+
+.topbar-right {
+  flex: 0 0 auto;
+}
+
+.title-input {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: var(--space-2);
+  min-width: 200px;
+  max-width: 400px;
+}
+
+.title-input:focus {
+  background: var(--background);
+  border-radius: var(--radius-sm);
+}
+
+.save-status {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.save-status.saved {
+  color: var(--success);
+}
+
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.875rem;
+  min-height: 36px;
+}
+
+/* Editor Layout */
+.editor-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Left Panel */
+.editor-panel {
+  width: 400px;
+  background: var(--surface);
+  border-right: 2px solid var(--border);
+  overflow-y: auto;
+  padding: var(--space-6);
+}
+
+.panel-section {
+  margin-bottom: var(--space-8);
+}
+
+.panel-section h3 {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-4);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.add-section-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon:hover {
+  background: var(--primary);
+  color: var(--text-inverse);
+  border-color: var(--primary);
+}
+
+.sections-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Preview Panel */
+.preview-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  overflow: hidden;
+}
+
+.preview-toolbar {
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+}
+
+.viewport-toggle {
+  display: flex;
+  gap: var(--space-2);
+  background: var(--background);
+  padding: var(--space-1);
+  border-radius: var(--radius-md);
+}
+
+.viewport-btn {
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.viewport-btn:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.viewport-btn.active {
+  background: var(--primary);
+  color: var(--text-inverse);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .editor-layout {
+    flex-direction: column;
+  }
+
+  .editor-panel {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid var(--border);
+    max-height: 50vh;
+  }
+
+  .preview-panel {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .editor-topbar {
+    flex-wrap: wrap;
+  }
+
+  .topbar-left {
+    width: 100%;
+    order: 1;
+  }
+
+  .topbar-center {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .topbar-right {
+    order: 2;
+  }
+
+  .title-input {
+    max-width: none;
+  }
+
+  .editor-panel {
+    max-height: 40vh;
+  }
+}

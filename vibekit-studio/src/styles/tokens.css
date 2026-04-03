@@ -1,0 +1,174 @@
+/* VibeKit Studio - Design Tokens */
+/* Base tokens used across all themes */
+
+:root {
+  /* Spacing Scale (4pt/8dp) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Z-index Scale */
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-modal: 40;
+  --z-popover: 50;
+  --z-tooltip: 60;
+
+  /* Breakpoints (for reference in media queries) */
+  /* mobile: 375px */
+  /* tablet: 768px */
+  /* desktop: 1024px */
+  /* wide: 1440px */
+}
+
+/* Theme-specific color tokens */
+/* Each theme defines its own color palette */
+
+/* Theme 1: Minimal (Clean, Editorial) */
+.theme-minimal {
+  --primary: #2563EB;
+  --secondary: #3B82F6;
+  --accent: #F97316;
+  --background: #FFFFFF;
+  --surface: #F8FAFC;
+  --border: #E2E8F0;
+  --text: #1E293B;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+/* Theme 2: Dark Neon (Cyberpunk, High Contrast) */
+.theme-dark-neon {
+  --primary: #00F0FF;
+  --secondary: #FF00FF;
+  --accent: #00FF88;
+  --background: #0A0A0F;
+  --surface: #1A1A2E;
+  --border: #2A2A3E;
+  --text: #FFFFFF;
+  --text-muted: #A0A0B0;
+  --text-inverse: #0A0A0F;
+  --success: #00FF88;
+  --error: #FF0055;
+  --warning: #FFD700;
+
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Theme 3: Neo-Brutal (Bold, Geometric, High Contrast) */
+.theme-neo-brutal {
+  --primary: #000000;
+  --secondary: #FF6B35;
+  --accent: #FFD23F;
+  --background: #FFFFFF;
+  --surface: #F5F5F5;
+  --border: #000000;
+  --text: #000000;
+  --text-muted: #666666;
+  --text-inverse: #FFFFFF;
+  --success: #00D084;
+  --error: #FF3366;
+  --warning: #FFD23F;
+
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Jost', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+/* Theme 4: Soft Pastel (Gentle, Friendly, Approachable) */
+.theme-soft-pastel {
+  --primary: #A78BFA;
+  --secondary: #F9A8D4;
+  --accent: #FCD34D;
+  --background: #FFF7ED;
+  --surface: #FFFFFF;
+  --border: #E9D5FF;
+  --text: #4C1D95;
+  --text-muted: #9333EA;
+  --text-inverse: #FFFFFF;
+  --success: #86EFAC;
+  --error: #FCA5A5;
+  --warning: #FDE68A;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Nunito', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+/* Theme 5: Retro Gaming (8-bit, Pixelated, Nostalgic) */
+.theme-retro-gaming {
+  --primary: #FF6B6B;
+  --secondary: #4ECDC4;
+  --accent: #FFE66D;
+  --background: #2D2D2D;
+  --surface: #3D3D3D;
+  --border: #5D5D5D;
+  --text: #FFFFFF;
+  --text-muted: #CCCCCC;
+  --text-inverse: #2D2D2D;
+  --success: #95E1D3;
+  --error: #FF6B6B;
+  --warning: #FFE66D;
+
+  --font-display: 'Press Start 2P', monospace;
+  --font-body: 'VT323', monospace;
+  --font-mono: 'VT323', monospace;
+}
+
+/* Theme 6: Elegant Serif (Luxury, Sophisticated, Timeless) */
+.theme-elegant-serif {
+  --primary: #8B7355;
+  --secondary: #C4A57B;
+  --accent: #D4AF37;
+  --background: #FAFAF9;
+  --surface: #FFFFFF;
+  --border: #E7E5E4;
+  --text: #292524;
+  --text-muted: #78716C;
+  --text-inverse: #FAFAF9;
+  --success: #84CC16;
+  --error: #DC2626;
+  --warning: #F59E0B;
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-mono: 'Space Mono', monospace;
+}

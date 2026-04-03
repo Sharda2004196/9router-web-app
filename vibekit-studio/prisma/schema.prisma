@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  pages     Page[]
+}
+
+model Page {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  slug        String   @unique
+  status      String   @default("draft") // draft | published
+  theme       String   @default("minimal")
+  content     Json     // stores all section data as JSON
+  viewCount   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  contacts    ContactSubmission[]
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  pageId    String
+  page      Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
